@@ -1,4 +1,4 @@
-﻿namespace Cached
+﻿namespace Dagaren.Cached
 {
     public interface ICached<T>
     {
