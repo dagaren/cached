@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackgroundRefreshedCached.cs" />
     <Compile Include="Cached.cs" />
     <Compile Include="ICached.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
