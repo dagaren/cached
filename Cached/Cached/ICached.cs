@@ -1,6 +1,9 @@
 ﻿namespace Cached
 {
-    public interface ICached
+    public interface ICached<T>
     {
+        T Value { get; }
+
+        void Invalidate();
     }
 }
