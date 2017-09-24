@@ -9,13 +9,13 @@
 
         private bool initialized = false;
 
-        private readonly ICached<Task<T>> innerCache;
+        private readonly ICached<Task<T>> innerCached;
 
         private readonly object lockObject = new object();
 
         public BackgroundRefreshedCachedTask(ICached<Task<T>> innerCached)
         {
-            this.innerCache = innerCache ?? throw new ArgumentNullException("innerCached");
+            this.innerCached = innerCached ?? throw new ArgumentNullException("innerCached");
         }
 
         public Task<T> Value
@@ -28,7 +28,7 @@
                     {
                         if(this.initialized == false)
                         {
-                            this.value = this.innerCache.Value;
+                            this.value = this.innerCached.Value;
                             this.initialized = true;
                         }
                     }
@@ -40,13 +40,13 @@
 
         public void Invalidate()
         {
-            this.innerCache.Invalidate();
+            this.innerCached.Invalidate();
 
             if(this.initialized == true)
             {
                 Task.Run(async () =>
                 {
-                    Task<T> temporalValue = this.innerCache.Value;
+                    Task<T> temporalValue = this.innerCached.Value;
                     await temporalValue;
                     this.value = temporalValue;
                 });
