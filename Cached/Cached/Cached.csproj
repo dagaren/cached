@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackgroundRefreshedCached.cs" />
+    <Compile Include="BackgroundRefreshedCachedTask.cs" />
     <Compile Include="Cached.cs" />
     <Compile Include="ICached.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
