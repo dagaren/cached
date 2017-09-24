@@ -2,7 +2,7 @@
 {
     using System;
 
-    class Cached<T> : ICached<T>
+    public class Cached<T> : ICached<T>
     {
         private T value;
 

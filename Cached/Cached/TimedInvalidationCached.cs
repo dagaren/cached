@@ -4,7 +4,7 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    class TimedInvalidationCached<T> : ICached<T>, IDisposable
+    public class TimedInvalidationCached<T> : ICached<T>, IDisposable
     {
         private ICached<T> innerCached;
 

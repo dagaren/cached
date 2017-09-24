@@ -3,7 +3,7 @@
     using System;
     using System.Threading.Tasks;
 
-    class BackgroundRefreshedCached<T> : ICached<T>
+    public class BackgroundRefreshedCached<T> : ICached<T>
     {
         private T value;
 
